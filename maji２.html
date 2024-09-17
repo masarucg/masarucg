@@ -10,6 +10,21 @@
             margin: 0;
             padding: 20px;
             background-color: #f7f7f7;
+            display: flex;
+            justify-content: space-between;
+        }
+        .container {
+            width: 70%;
+        }
+        .memo {
+            width: 25%;
+            padding: 15px;
+            border-left: 2px solid #ccc;
+            background-color: #fff;
+            position: sticky;
+            top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
         }
         h1 {
             font-size: 24px;
@@ -54,15 +69,29 @@
     </script>
 </head>
 <body>
-    <h1>計算ページ</h1>
-    <label>指名料: <input type="number" id="shimei" oninput="calculate()" placeholder="指名料を入力"> 円</label><br>
-    <label>席料: <input type="number" id="seki" oninput="calculate()" placeholder="席料を入力"> 円</label><br>
-    <label>同伴料: <input type="checkbox" id="douhan" onclick="calculate()"> (指名料と同額)</label><br>
-    <label>他小計: <input type="number" id="subtotal" oninput="calculate()" placeholder="他小計を入力"> 円</label><br>
+    <div class="container">
+        <h1>計算ページ</h1>
+        <label>指名料: <input type="number" id="shimei" oninput="calculate()" placeholder="指名料を入力"> 円</label><br>
+        <label>席料: <input type="number" id="seki" oninput="calculate()" placeholder="席料を入力"> 円</label><br>
+        <label>同伴料: <input type="checkbox" id="douhan" onclick="calculate()"> (指名料と同額)</label><br>
+        <label>他小計: <input type="number" id="subtotal" oninput="calculate()" placeholder="他小計を入力"> 円</label><br>
 
-    <div class="result">
-        <p>1. 総小計: <span id="total1">0</span> 円</p>
-        <p>2. 総合計: <span id="total2">0</span> 円</p>
+        <div class="result">
+            <p>1. 総小計: <span id="total1">0</span> 円</p>
+            <p>2. 総合計: <span id="total2">0</span> 円</p>
+        </div>
+    </div>
+
+    <div class="memo">
+        <p><strong>【指名料】</strong><br>
+        役職 : 5,000円<br>
+        非役職 : 3,000円</p>
+        <p><strong>【席料】</strong><br>
+        通常 : 5,000円<br>
+        VIP : 10,000円<br>
+        EXVIP : 25,000円</p>
+        <p>※クイックの小計は【席料】のみ<br>
+        ※1000円未満繰り上げは小計と総合計の2回</p>
     </div>
 </body>
 </html>
